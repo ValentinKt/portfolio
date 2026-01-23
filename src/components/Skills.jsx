@@ -3,50 +3,60 @@ import { Box, Typography, Container, Grid, Paper, Chip, Stack } from '@mui/mater
 import { 
   Settings, Server, Layout, Smartphone, Cpu, Database, UserCheck, Languages,
   Coffee, Code2, Layers, Zap, Hexagon, Box as BoxIcon, Workflow, Share2, 
-  Database as DbIcon, ShieldCheck, Braces, Terminal, BrainCircuit, Globe
+  Database as DbIcon, ShieldCheck, Braces, Terminal, BrainCircuit, Globe,
+  FileText, Repeat, Users, Github, GitBranch, Search, Lightbulb, FastForward
 } from 'lucide-react';
 import { data } from '../data';
 
-// Mapping des compétences vers des icônes
+// Mapping des compétences vers des icônes avec couleurs
 const skillIconMap = {
+  // Gestion de Projet
+  "Méthode AGILE": { icon: <Workflow size={14} />, color: '#00b8d9' },
+  "Epic/Story": { icon: <FileText size={14} />, color: '#6554c0' },
+  "Sprint": { icon: <Repeat size={14} />, color: '#36b37e' },
+  "Pair Programming": { icon: <Users size={14} />, color: '#ff5630' },
+  "Jira": { icon: <Settings size={14} />, color: '#0052cc' },
+  "Confluence": { icon: <Search size={14} />, color: '#0052cc' },
+  "Git": { icon: <GitBranch size={14} />, color: '#f05032' },
+  "GitHub": { icon: <Github size={14} />, color: '#333' },
+  
   // Mobile
-  "Java": <Coffee size={14} />,
-  "Kotlin": <Code2 size={14} />,
-  "Koin": <Zap size={14} />,
-  "DaggerHilt": <ShieldCheck size={14} />,
-  "Clean Architecture": <Layers size={14} />,
-  "Jetpack Compose": <Hexagon size={14} />,
-  "Material3": <Layout size={14} />,
-  "Coroutines": <Workflow size={14} />,
-  "KMP - KMM": <Globe size={14} />,
-  "KTor": <Server size={14} />,
-  "GraphQL": <Share2 size={14} />,
-  "Retrofit": <Braces size={14} />,
-  "Room": <DbIcon size={14} />,
+  "Java": { icon: <Coffee size={14} />, color: '#ed8b00' },
+  "Kotlin": { icon: <Code2 size={14} />, color: '#7f52ff' },
+  "Koin": { icon: <Zap size={14} />, color: '#ffc107' },
+  "DaggerHilt": { icon: <ShieldCheck size={14} />, color: '#3d5afe' },
+  "Clean Architecture": { icon: <Layers size={14} />, color: '#4caf50' },
+  "Jetpack Compose": { icon: <Hexagon size={14} />, color: '#4285f4' },
+  "Material3": { icon: <Layout size={14} />, color: '#7b1fa2' },
+  "Coroutines": { icon: <FastForward size={14} />, color: '#00bcd4' },
+  "KMP - KMM": { icon: <Globe size={14} />, color: '#3f51b5' },
+  "KTor": { icon: <Server size={14} />, color: '#00acc1' },
+  "GraphQL": { icon: <Share2 size={14} />, color: '#e10098' },
+  "Retrofit": { icon: <Braces size={14} />, color: '#607d8b' },
+  "Room": { icon: <DbIcon size={14} />, color: '#4db6ac' },
   
   // Backend
-  "Spring Boot": <Coffee size={14} />,
-  "Node.js": <Terminal size={14} />,
-  "Express": <Server size={14} />,
+  "Spring Boot": { icon: <Coffee size={14} />, color: '#6db33f' },
+  "Node.js": { icon: <Terminal size={14} />, color: '#339933' },
+  "Express": { icon: <Server size={14} />, color: '#000000' },
   
   // Frontend
-  "React": <BoxIcon size={14} />,
-  "TypeScript": <Braces size={14} />,
-  "Tailwind CSS": <Layout size={14} />,
-  "Angular": <Hexagon size={14} />,
+  "React": { icon: <BoxIcon size={14} />, color: '#61dafb' },
+  "TypeScript": { icon: <Braces size={14} />, color: '#3178c6' },
+  "Tailwind CSS": { icon: <Layout size={14} />, color: '#06b6d4' },
+  "Angular": { icon: <Hexagon size={14} />, color: '#dd0031' },
   
   // IA
-  "Python": <Terminal size={14} />,
-  "LangChain": <BrainCircuit size={14} />,
-  "LangGraph": <Workflow size={14} />,
-  "Ollama": <Cpu size={14} />,
-  "RAG": <Database size={14} />,
+  "Python": { icon: <Terminal size={14} />, color: '#3776ab' },
+  "LangChain": { icon: <BrainCircuit size={14} />, color: '#121212' },
+  "LangGraph": { icon: <Workflow size={14} />, color: '#ff6f00' },
+  "Ollama": { icon: <Cpu size={14} />, color: '#546e7a' },
+  "RAG": { icon: <Database size={14} />, color: '#009688' },
   
-  // Outils
-  "Git": <Share2 size={14} />,
-  "Docker": <BoxIcon size={14} />,
-  "Jira": <Settings size={14} />,
-  "VS Code": <Terminal size={14} />
+  // Soft Skills
+  "Empathique": { icon: <UserCheck size={14} />, color: '#e91e63' },
+  "Curieux": { icon: <Lightbulb size={14} />, color: '#ffeb3b' },
+  "Adaptabilité": { icon: <Repeat size={14} />, color: '#9c27b0' }
 };
 
 const Skills = () => {
@@ -81,18 +91,25 @@ const Skills = () => {
                 </Stack>
                 <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
                   {category.items.map((skill, i) => {
-                    // Nettoyage du nom de la compétence pour le mapping
                     const cleanSkill = skill.split(' (')[0].split(' - ')[0];
-                    const icon = skillIconMap[cleanSkill] || skillIconMap[skill];
+                    const skillData = skillIconMap[cleanSkill] || skillIconMap[skill];
                     
                     return (
                       <Chip 
                         key={i} 
                         label={skill} 
-                        icon={icon}
+                        icon={skillData?.icon}
                         sx={{ 
                           bgcolor: 'white',
-                          '& .MuiChip-icon': { color: 'primary.main' }
+                          border: skillData ? `1px solid ${skillData.color}40` : '1px solid #e2e8f0',
+                          '& .MuiChip-icon': { 
+                            color: skillData ? skillData.color : 'primary.main' 
+                          },
+                          '&:hover': {
+                            bgcolor: skillData ? `${skillData.color}10` : '#f8fafc',
+                            borderColor: skillData ? skillData.color : 'primary.main',
+                          },
+                          transition: 'all 0.2s'
                         }} 
                       />
                     );

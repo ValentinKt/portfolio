@@ -105,7 +105,7 @@ export const data = {
     }
   ],
   skills: {
-    projectManagement: ["Méthode AGILE (SCRUM)", "Jira", "Confluence", "Git", "GitLab", "GitHub", "Pair Review"],
+    projectManagement: ["Méthode AGILE (SCRUM)", "Epic/Story", "Sprint", "Pair Programming", "Jira", "Confluence", "Git", "GitLab", "GitHub", "Pair Review"],
     backend: ["Java", "Spring Boot", "API REST", "Hibernate (ORM)", "Node.js", "Express"],
     frontend: ["Java", "Kotlin (Android)", "TypeScript (Angular, React)", "React", "Tailwind CSS"],
     database: ["SQL (MySQL, SQL Server, PostgreSQL, SQLite)", "NoSQL (MongoDB, Redis)"],
