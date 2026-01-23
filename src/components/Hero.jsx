@@ -24,7 +24,7 @@ const Hero = () => {
             <Typography variant="body1" paragraph sx={{ color: 'text.secondary', fontSize: '1.1rem', maxWidth: '600px' }}>
               {profile.summary}
             </Typography>
-            <Stack direction="row" spacing={2} sx={{ mt: 4 }}>
+            <Stack direction="row" spacing={2} sx={{ mt: 4 }} flexWrap="wrap" useFlexGap>
               <Button
                 variant="contained"
                 size="large"
@@ -33,6 +33,17 @@ const Hero = () => {
                 target="_blank"
               >
                 GitHub
+              </Button>
+              <Button
+                variant="contained"
+                size="large"
+                color="secondary"
+                startIcon={<Linkedin />}
+                href={profile.linkedin}
+                target="_blank"
+                sx={{ bgcolor: '#0077b5', '&:hover': { bgcolor: '#005582' } }}
+              >
+                LinkedIn
               </Button>
               <Button
                 variant="outlined"

@@ -1,6 +1,5 @@
-import React from 'react';
 import { Box, Typography, Container, Card, CardContent, Stack, Divider, Chip } from '@mui/material';
-import { Briefcase, Calendar, MapPin } from 'lucide-react';
+import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 import { data } from '../data';
 
 const Experience = () => {
@@ -35,6 +34,14 @@ const Experience = () => {
                   </Box>
                 </Stack>
                 <Divider sx={{ my: 2 }} />
+                <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
+                  {exp.role.toLowerCase().includes('projet') && (
+                    <Chip icon={<CheckCircle2 size={16} />} label="Gestion de Projet" size="small" color="primary" variant="outlined" />
+                  )}
+                  {exp.description.some(d => d.toLowerCase().includes('ia') || d.toLowerCase().includes('data')) && (
+                    <Chip icon={<CheckCircle2 size={16} />} label="IA & Data" size="small" color="secondary" variant="outlined" />
+                  )}
+                </Stack>
                 <Box component="ul" sx={{ pl: 2, m: 0 }}>
                   {exp.description.map((item, i) => (
                     <Typography key={i} component="li" variant="body1" sx={{ mb: 1, color: 'text.secondary' }}>

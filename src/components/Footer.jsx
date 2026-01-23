@@ -20,6 +20,9 @@ const Footer = () => {
             <IconButton color="inherit" href={data.profile.github} target="_blank">
               <Github />
             </IconButton>
+            <IconButton color="inherit" href={data.profile.linkedin} target="_blank">
+              <Linkedin />
+            </IconButton>
             <IconButton color="inherit" href={`mailto:${data.profile.email}`}>
               <Mail />
             </IconButton>

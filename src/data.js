@@ -6,8 +6,9 @@ export const data = {
     email: "jeannot.valentin@orange.fr",
     phone: "06 37 42 71 37",
     location: "Chagny (08430), Ardennes",
-    summary: "Ingénieur avec plus de 10 ans d'expérience dans le développement d'applications Web & Mobile (front-end et back-end), je suis animé par la transformation de concepts en solutions concrètes, en traduisant les besoins utilisateurs en code fiable. Mon expertise technique, associée à de solides compétences en développement et en gestion de projet, me permet de collaborer étroitement avec des équipes pluridisciplinaires afin de renforcer la cohésion et d'atteindre les objectifs fixés.",
+    summary: "Ingénieur avec plus de 10 ans d'expérience dans le développement d'applications Web & Mobile, je me spécialise aujourd'hui dans la gestion de projet et l'intégration de solutions d'IA (RAG, LLM) pour transformer des concepts complexes en produits concrets. Mon expertise technique, associée à une forte culture Agile, me permet de piloter des projets innovants tout en garantissant un code fiable et une expérience utilisateur optimale.",
     github: "https://github.com/ValentinKt",
+    linkedin: "https://www.linkedin.com/in/valentinkt/",
     website: "https://valentinkt.github.io",
     languages: [
       { name: "Français", level: "Maternel" },

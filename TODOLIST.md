@@ -10,3 +10,6 @@
 [x] Développer la section Formation
 [x] Finaliser le design (Teal color theme, Responsive)
 [x] Vérification et déploiement simulé avec OpenPreview
+[x] Ajouter le lien LinkedIn et mettre à jour les données (Gestion de projet & IA)
+[x] Ajouter des icônes supplémentaires dans les sections Compétences et Expériences
+[x] Mettre à jour l'UI pour afficher LinkedIn et accentuer l'IA/Gestion de projet
