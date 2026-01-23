@@ -5,14 +5,14 @@ import { data } from '../data';
 
 const Education: React.FC = () => {
   return (
-    <Box id="education" sx={{ py: 8, bgcolor: 'white' }}>
+    <Box id="education" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'slate.900' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'text.primary' }}>
           Formation
         </Typography>
         <Stack spacing={4}>
           {data.education.map((edu, index) => (
-            <Card key={index} variant="outlined">
+            <Card key={index} variant="outlined" sx={{ bgcolor: 'background.paper', borderColor: 'divider' }}>
               <CardContent sx={{ p: 4 }}>
                 <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
                   <Box>

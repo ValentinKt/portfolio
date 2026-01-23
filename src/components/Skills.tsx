@@ -94,18 +94,41 @@ const Skills: React.FC = () => {
   return (
     <Box id="skills" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'slate.900' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'text.primary' }}>
           Compétences Techniques
         </Typography>
         <Grid container spacing={4}>
           {skillCategories.map((category, index) => (
-            <Grid size={{ xs: 12, md: 6 }} key={index}>
-              <Paper sx={{ p: 3, height: '100%' }} elevation={0} variant="outlined">
-                <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 2 }}>
-                  <Box sx={{ color: 'primary.main', display: 'flex' }}>
+            <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index}>
+              <Paper 
+                elevation={0} 
+                sx={{ 
+                  p: 3, 
+                  height: '100%', 
+                  bgcolor: 'rgba(10, 10, 10, 0.6)',
+                  border: '1px solid',
+                  borderColor: 'rgba(255, 255, 255, 0.05)',
+                  borderRadius: '16px',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    borderColor: 'primary.main',
+                    boxShadow: '0 0 20px rgba(20, 184, 166, 0.1)',
+                    transform: 'translateY(-4px)',
+                  }
+                }}
+              >
+                <Stack direction="row" spacing={2} alignItems="center" sx={{ mb: 3 }}>
+                  <Box sx={{ 
+                    p: 1, 
+                    borderRadius: '8px', 
+                    bgcolor: 'primary.main', 
+                    color: 'primary.contrastText',
+                    boxShadow: '0 0 10px rgba(20, 184, 166, 0.4)',
+                    display: 'flex'
+                  }}>
                     {category.icon}
                   </Box>
-                  <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                  <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
                     {category.title}
                   </Typography>
                 </Stack>
@@ -130,14 +153,17 @@ const Skills: React.FC = () => {
                         label={skill} 
                         icon={chipIcon as React.ReactElement}
                         sx={{ 
-                          bgcolor: 'white',
-                          border: skillData ? `1px solid ${skillData.color}40` : '1px solid #e2e8f0',
+                          bgcolor: 'rgba(255, 255, 255, 0.03)',
+                          border: skillData ? `1px solid ${skillData.color}44` : '1px solid rgba(255, 255, 255, 0.1)',
+                          borderColor: skillData ? `${skillData.color}44` : 'rgba(255, 255, 255, 0.1)',
+                          backdropFilter: 'blur(4px)',
                           '& .MuiChip-icon': { 
                             color: skillData ? skillData.color : 'primary.main' 
                           },
                           '&:hover': {
-                            bgcolor: skillData ? `${skillData.color}10` : '#f8fafc',
+                            bgcolor: skillData ? `${skillData.color}33` : 'rgba(20, 184, 166, 0.1)',
                             borderColor: skillData ? skillData.color : 'primary.main',
+                            boxShadow: skillData ? `0 0 10px ${skillData.color}44` : '0 0 10px rgba(20, 184, 166, 0.2)',
                           },
                           transition: 'all 0.2s'
                         }} 

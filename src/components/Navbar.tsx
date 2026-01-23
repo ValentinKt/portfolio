@@ -18,13 +18,30 @@ const Navbar: React.FC = () => {
   };
 
   return (
-    <AppBar position="sticky" color="default" elevation={1} sx={{ bgcolor: 'white' }}>
+    <AppBar 
+      position="sticky" 
+      color="default" 
+      elevation={0} 
+      sx={{ 
+        bgcolor: 'rgba(0, 0, 0, 0.8)', 
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid', 
+        borderColor: 'rgba(255, 255, 255, 0.05)',
+        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
+      }}
+    >
       <Container maxWidth="lg">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
             component="div"
-            sx={{ flexGrow: 1, color: 'primary.main', fontWeight: 'bold', cursor: 'pointer' }}
+            sx={{ 
+              flexGrow: 1, 
+              color: 'primary.main', 
+              fontWeight: 'bold', 
+              cursor: 'pointer',
+              textShadow: '0 0 10px rgba(20, 184, 166, 0.3)'
+            }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
             ValentinKt

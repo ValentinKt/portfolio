@@ -21,4 +21,5 @@
 [x] Typer tous les composants React (React.FC)
 [x] Résoudre les erreurs de compilation TypeScript
 [x] Mettre à jour les détails des sections Formation demandées
+[x] Ajouter un thème sombre aligné sur le style fourni
 [x] Add homepage field to package.json for GitHub Pages

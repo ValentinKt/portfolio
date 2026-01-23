@@ -7,14 +7,39 @@ const Hero: React.FC = () => {
   const { profile } = data;
 
   return (
-    <Box sx={{ bgcolor: 'white', pt: 8, pb: 6, borderBottom: '1px solid', borderColor: 'divider' }}>
-      <Container maxWidth="lg">
+    <Box sx={{ 
+      bgcolor: 'background.default', 
+      pt: 8, 
+      pb: 6, 
+      borderBottom: '1px solid', 
+      borderColor: 'divider',
+      position: 'relative',
+      overflow: 'hidden',
+      '&::before': {
+        content: '""',
+        position: 'absolute',
+        top: '-10%',
+        left: '-10%',
+        width: '40%',
+        height: '40%',
+        background: 'radial-gradient(circle, rgba(20, 184, 166, 0.05) 0%, transparent 70%)',
+        zIndex: 0,
+      }
+    }}>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} alignItems="center">
           <Box sx={{ flex: 1 }}>
-            <Typography variant="h2" component="h1" gutterBottom sx={{ fontWeight: 'bold', color: 'slate.900' }}>
+            <Typography variant="h2" component="h1" gutterBottom sx={{ 
+              fontWeight: 'bold', 
+              color: 'text.primary',
+              textShadow: '0 0 20px rgba(20, 184, 166, 0.3)'
+            }}>
               {profile.name}
             </Typography>
-            <Typography variant="h4" color="primary" gutterBottom sx={{ fontWeight: 'medium' }}>
+            <Typography variant="h4" color="primary" gutterBottom sx={{ 
+              fontWeight: 'medium',
+              textShadow: '0 0 10px rgba(20, 184, 166, 0.2)'
+            }}>
               {profile.title}
             </Typography>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 3, color: 'text.secondary' }}>
@@ -41,7 +66,12 @@ const Hero: React.FC = () => {
                 startIcon={<Linkedin />}
                 href={profile.linkedin}
                 target="_blank"
-                sx={{ bgcolor: '#0077b5', '&:hover': { bgcolor: '#005582' } }}
+                sx={{ 
+                  boxShadow: '0 0 15px rgba(188, 19, 254, 0.3)',
+                  '&:hover': {
+                    boxShadow: '0 0 20px rgba(188, 19, 254, 0.5)',
+                  }
+                }}
               >
                 LinkedIn
               </Button>
@@ -50,6 +80,13 @@ const Hero: React.FC = () => {
                 size="large"
                 startIcon={<Mail />}
                 href={`mailto:${profile.email}`}
+                sx={{
+                  borderColor: 'rgba(255, 255, 255, 0.2)',
+                  '&:hover': {
+                    borderColor: 'primary.main',
+                    boxShadow: '0 0 10px rgba(20, 184, 166, 0.2)',
+                  }
+                }}
               >
                 Email
               </Button>
@@ -60,9 +97,14 @@ const Hero: React.FC = () => {
               sx={{
                 width: { xs: 200, md: 300 },
                 height: { xs: 200, md: 300 },
-                bgcolor: 'primary.light',
+                bgcolor: 'rgba(20, 184, 166, 0.1)',
+                color: 'primary.main',
                 fontSize: '4rem',
-                boxShadow: 3
+                fontWeight: 'bold',
+                border: '2px solid',
+                borderColor: 'primary.main',
+                boxShadow: '0 0 30px rgba(20, 184, 166, 0.4)',
+                backdropFilter: 'blur(5px)',
               }}
             >
               VJ

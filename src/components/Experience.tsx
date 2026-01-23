@@ -7,12 +7,12 @@ const Experience: React.FC = () => {
   return (
     <Box id="experience" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'slate.900' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 6, color: 'text.primary' }}>
           Expériences Professionnelles
         </Typography>
         <Stack spacing={4}>
           {data.experience.map((exp, index) => (
-            <Card key={index} variant="outlined" sx={{ borderLeft: '4px solid', borderLeftColor: 'primary.main' }}>
+            <Card key={index} variant="outlined" sx={{ borderLeft: '4px solid', borderLeftColor: 'primary.main', bgcolor: 'background.paper' }}>
               <CardContent sx={{ p: 4 }}>
                 <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" alignItems={{ sm: 'flex-start' }} spacing={2}>
                   <Box>

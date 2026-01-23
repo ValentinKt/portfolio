@@ -5,9 +5,9 @@ import { data } from '../data';
 
 const Projects: React.FC = () => {
   return (
-    <Box id="projects" sx={{ py: 8, bgcolor: 'white' }}>
+    <Box id="projects" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
-        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 2, color: 'slate.900' }}>
+        <Typography variant="h3" component="h2" gutterBottom sx={{ textAlign: 'center', mb: 2, color: 'text.primary' }}>
           Projets Sélectionnés
         </Typography>
         <Typography variant="body1" sx={{ textAlign: 'center', mb: 6, color: 'text.secondary' }}>
@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
         <Grid container spacing={4}>
           {data.projects.map((project, index) => (
             <Grid size={{ xs: 12, sm: 6, md: 6 }} key={index}>
-              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
+              <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', bgcolor: 'background.paper', borderColor: 'divider', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 'bold' }}>
                     {project.title}
