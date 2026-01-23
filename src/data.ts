@@ -157,13 +157,28 @@ export const data: PortfolioData = {
       school: "TELECOM NANCY",
       degree: "Ingénieur Informatique (Spécialisation : Système d'Information d'Entreprise)",
       period: "2012 - 2016",
-      location: "Villers-lès-Nancy, France"
+      location: "Villers-lès-Nancy, France",
+      details: [
+        "Spécialisation : Système d'Information d'Entreprise (https://telecomnancy.univ-lorraine.fr/formation/approfondissements/systemes-dinformation-dentreprise/)",
+        "Interopérabilité des applications d’entreprise",
+        "Systèmes ERP",
+        "Systèmes décisionnels",
+        "Systèmes distribués",
+        "Langages : Java, ASSEMBLEUR, MatLab",
+        "Bases de données : SQL, MySQL, PL-SQL",
+        "Automatisation : Grafcet"
+      ]
     },
     {
       school: "IUT CHARLEMAGNE",
       degree: "DUT INFORMATIQUE",
       period: "Septembre 2010 - Juin 2012",
-      location: "Nancy, France"
+      location: "Nancy, France",
+      details: [
+        "Langages : Java, C, Cobol",
+        "Bases de données : SQL, MySQL, ORACLE (Arbre B+) - PL-SQL",
+        "Algorithmie, Algorithmie avancées."
+      ]
     }
   ],
   skills: {
