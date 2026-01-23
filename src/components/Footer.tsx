@@ -8,18 +8,18 @@ const Footer: React.FC = () => {
     <Box 
       component="footer" 
       sx={{ 
-        bgcolor: 'rgba(0, 0, 0, 0.9)', 
+        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(18, 18, 18, 0.9)' : 'rgba(248, 250, 252, 0.9)', 
         color: 'text.primary', 
         py: 6, 
         borderTop: '1px solid', 
-        borderColor: 'rgba(255, 255, 255, 0.05)',
+        borderColor: 'divider',
         backdropFilter: 'blur(10px)'
       }}
     >
       <Container maxWidth="lg">
         <Stack direction={{ xs: 'column', md: 'row' }} justifyContent="space-between" alignItems="center" spacing={4}>
           <Box>
-            <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', textShadow: '0 0 10px rgba(20, 184, 166, 0.3)' }}>
+            <Typography variant="h6" sx={{ fontWeight: 'bold', color: 'primary.main', textShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 10px rgba(20, 184, 166, 0.3)' : 'none' }}>
               ValentinKt
             </Typography>
             <Typography variant="body2" sx={{ opacity: 0.6 }}>

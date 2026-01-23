@@ -24,11 +24,11 @@ const Navbar: React.FC = () => {
       color="default" 
       elevation={0} 
       sx={{ 
-        bgcolor: 'rgba(0, 0, 0, 0.8)', 
+        bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(18, 18, 18, 0.8)' : 'rgba(255, 255, 255, 0.8)', 
         backdropFilter: 'blur(10px)',
         borderBottom: '1px solid', 
-        borderColor: 'rgba(255, 255, 255, 0.05)',
-        boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)'
+        borderColor: 'divider',
+        boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 4px 30px rgba(0, 0, 0, 0.5)' : '0 1px 10px rgba(0, 0, 0, 0.05)',
       }}
     >
       <Container maxWidth="lg">
@@ -41,7 +41,7 @@ const Navbar: React.FC = () => {
               color: 'primary.main', 
               fontWeight: 'bold', 
               cursor: 'pointer',
-              textShadow: '0 0 10px rgba(20, 184, 166, 0.3)'
+              textShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 10px rgba(20, 184, 166, 0.3)' : 'none'
             }}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           >
