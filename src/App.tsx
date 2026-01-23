@@ -1,6 +1,6 @@
 import React from 'react';
-import { ThemeProvider, CssBaseline, Box } from '@mui/material';
-import { theme } from './theme';
+import { CssBaseline, Box } from '@mui/material';
+import { ColorModeProvider } from './ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Experience from './components/Experience';
@@ -11,7 +11,7 @@ import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
-    <ThemeProvider theme={theme}>
+    <ColorModeProvider>
       <CssBaseline />
       <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
         <Navbar />
@@ -24,7 +24,7 @@ const App: React.FC = () => {
         </Box>
         <Footer />
       </Box>
-    </ThemeProvider>
+    </ColorModeProvider>
   );
 }
 

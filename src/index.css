@@ -10,8 +10,5 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  @apply bg-black text-white selection:bg-teal-500/30;
-  background-image: 
-    radial-gradient(at 0% 0%, rgba(20, 184, 166, 0.1) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(188, 19, 254, 0.1) 0px, transparent 50%);
+  @apply selection:bg-teal-500/30;
 }

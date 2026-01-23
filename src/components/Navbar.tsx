@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
-import { Github, Mail, Phone } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import ThemeToggleButton from './ThemeToggleButton';
 
 const Navbar: React.FC = () => {
   const navItems = [
@@ -57,7 +58,8 @@ const Navbar: React.FC = () => {
               </Button>
             ))}
           </Box>
-          <Box sx={{ ml: 2, display: 'flex', gap: 1 }}>
+          <Box sx={{ ml: 2, display: 'flex', gap: 1, alignItems: 'center' }}>
+            <ThemeToggleButton />
             <Button
               variant="contained"
               size="small"
