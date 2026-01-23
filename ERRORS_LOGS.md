@@ -5,3 +5,4 @@
 [2026-01-23] [Network Error] net::ERR_BLOCKED_BY_ORB https://img.icons8.com/color/48/000000/flexible.png - FIXED: Removed 000000/ from URL and used valid slug.
 [2026-01-23] [Network Error] net::ERR_BLOCKED_BY_ORB https://img.icons8.com/color/48/000000/search-database.png - FIXED: Removed 000000/ from URL and used valid slug.
 [2026-01-23] [Vite Error] Pre-transform error: Failed to load url /src/main.tsx (resolved id: /src/main.tsx). Does the file exist? - FIXED: Dev server restarted after TypeScript migration.
+[2026-01-23] [Command Error] sh: react-scripts: command not found - FIXED: Updated package.json scripts to use Vite and installed gh-pages dependency.
