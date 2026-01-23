@@ -1,9 +1,38 @@
 import React from 'react';
-import { Box, Typography, Container, Card, CardContent, Stack, Divider } from '@mui/material';
+import { Box, Typography, Container, Card, CardContent, Stack, Divider, Link } from '@mui/material';
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 import { data } from '../data';
 
 const Education: React.FC = () => {
+  const renderTextWithLink = (text: string) => {
+    const target = "Système d'Information d'Entreprise";
+    const url = "https://telecomnancy.univ-lorraine.fr/formation/approfondissements/systemes-dinformation-dentreprise/";
+
+    if (text.includes(target)) {
+      const parts = text.split(target);
+      return (
+        <>
+          {parts[0]}
+          <Link
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+            sx={{ 
+              color: 'primary.main', 
+              fontWeight: 'inherit',
+              textDecoration: 'none', 
+              '&:hover': { textDecoration: 'underline' } 
+            }}
+          >
+            {target}
+          </Link>
+          {parts[1]}
+        </>
+      );
+    }
+    return text;
+  };
+
   return (
     <Box id="education" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">
@@ -17,7 +46,7 @@ const Education: React.FC = () => {
                 <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
                   <Box>
                     <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
-                      {edu.degree}
+                      {renderTextWithLink(edu.degree)}
                     </Typography>
                     <Typography variant="h6" color="primary">
                       {edu.school}
@@ -40,7 +69,7 @@ const Education: React.FC = () => {
                     <Box component="ul" sx={{ pl: 2, m: 0 }}>
                       {edu.details.map((detail, i) => (
                         <Typography key={i} component="li" variant="body1" sx={{ mb: 1, color: 'text.secondary' }}>
-                          {detail}
+                          {renderTextWithLink(detail)}
                         </Typography>
                       ))}
                     </Box>

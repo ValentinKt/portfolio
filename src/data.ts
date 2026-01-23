@@ -159,7 +159,7 @@ export const data: PortfolioData = {
       period: "2012 - 2016",
       location: "Villers-lès-Nancy, France",
       details: [
-        "Spécialisation : Système d'Information d'Entreprise (https://telecomnancy.univ-lorraine.fr/formation/approfondissements/systemes-dinformation-dentreprise/)",
+        "Spécialisation : Système d'Information d'Entreprise",
         "Interopérabilité des applications d’entreprise",
         "Systèmes ERP",
         "Systèmes décisionnels",
