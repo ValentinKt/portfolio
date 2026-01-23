@@ -20,7 +20,8 @@
     "@mui/x-tree-view": "^8.26.0",
     "lucide-react": "^0.563.0",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "simple-icons": "^16.6.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
