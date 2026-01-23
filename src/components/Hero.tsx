@@ -32,13 +32,13 @@ const Hero: React.FC = () => {
             <Typography variant="h2" component="h1" gutterBottom sx={{ 
               fontWeight: 'bold', 
               color: 'text.primary',
-              textShadow: '0 0 20px rgba(20, 184, 166, 0.3)'
+              textShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 20px rgba(20, 184, 166, 0.3)' : 'none'
             }}>
               {profile.name}
             </Typography>
             <Typography variant="h4" color="primary" gutterBottom sx={{ 
               fontWeight: 'medium',
-              textShadow: '0 0 10px rgba(20, 184, 166, 0.2)'
+              textShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 10px rgba(20, 184, 166, 0.2)' : 'none'
             }}>
               {profile.title}
             </Typography>
@@ -67,9 +67,9 @@ const Hero: React.FC = () => {
                 href={profile.linkedin}
                 target="_blank"
                 sx={{ 
-                  boxShadow: '0 0 15px rgba(188, 19, 254, 0.3)',
+                  boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 15px rgba(188, 19, 254, 0.3)' : 'none',
                   '&:hover': {
-                    boxShadow: '0 0 20px rgba(188, 19, 254, 0.5)',
+                    boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 20px rgba(188, 19, 254, 0.5)' : 'none',
                   }
                 }}
               >
@@ -81,10 +81,10 @@ const Hero: React.FC = () => {
                 startIcon={<Mail />}
                 href={`mailto:${profile.email}`}
                 sx={{
-                  borderColor: 'rgba(255, 255, 255, 0.2)',
+                  borderColor: (theme) => theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.2)' : 'divider',
                   '&:hover': {
                     borderColor: 'primary.main',
-                    boxShadow: '0 0 10px rgba(20, 184, 166, 0.2)',
+                    boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 10px rgba(20, 184, 166, 0.2)' : 'none',
                   }
                 }}
               >
@@ -97,13 +97,13 @@ const Hero: React.FC = () => {
               sx={{
                 width: { xs: 200, md: 300 },
                 height: { xs: 200, md: 300 },
-                bgcolor: 'rgba(20, 184, 166, 0.1)',
+                bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(20, 184, 166, 0.1)' : 'rgba(20, 184, 166, 0.05)',
                 color: 'primary.main',
                 fontSize: '4rem',
                 fontWeight: 'bold',
                 border: '2px solid',
                 borderColor: 'primary.main',
-                boxShadow: '0 0 30px rgba(20, 184, 166, 0.4)',
+                boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 30px rgba(20, 184, 166, 0.4)' : '0 10px 25px -5px rgba(20, 184, 166, 0.2)',
                 backdropFilter: 'blur(5px)',
               }}
             >

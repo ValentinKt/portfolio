@@ -105,14 +105,16 @@ const Skills: React.FC = () => {
                 sx={{ 
                   p: 3, 
                   height: '100%', 
-                  bgcolor: 'rgba(10, 10, 10, 0.6)',
+                  bgcolor: 'background.paper',
                   border: '1px solid',
-                  borderColor: 'rgba(255, 255, 255, 0.05)',
+                  borderColor: 'divider',
                   borderRadius: '16px',
                   transition: 'all 0.3s ease-in-out',
                   '&:hover': {
                     borderColor: 'primary.main',
-                    boxShadow: '0 0 20px rgba(20, 184, 166, 0.1)',
+                    boxShadow: (theme) => theme.palette.mode === 'dark' 
+                      ? '0 0 20px rgba(20, 184, 166, 0.1)' 
+                      : '0 10px 15px -3px rgb(0 0 0 / 0.1)',
                     transform: 'translateY(-4px)',
                   }
                 }}
@@ -123,7 +125,9 @@ const Skills: React.FC = () => {
                     borderRadius: '8px', 
                     bgcolor: 'primary.main', 
                     color: 'primary.contrastText',
-                    boxShadow: '0 0 10px rgba(20, 184, 166, 0.4)',
+                    boxShadow: (theme) => theme.palette.mode === 'dark' 
+                      ? '0 0 10px rgba(20, 184, 166, 0.4)' 
+                      : 'none',
                     display: 'flex'
                   }}>
                     {category.icon}
@@ -153,17 +157,28 @@ const Skills: React.FC = () => {
                         label={skill} 
                         icon={chipIcon as React.ReactElement}
                         sx={{ 
-                          bgcolor: 'rgba(255, 255, 255, 0.03)',
-                          border: skillData ? `1px solid ${skillData.color}44` : '1px solid rgba(255, 255, 255, 0.1)',
-                          borderColor: skillData ? `${skillData.color}44` : 'rgba(255, 255, 255, 0.1)',
+                          bgcolor: (theme) => theme.palette.mode === 'dark' 
+                            ? 'rgba(255, 255, 255, 0.03)' 
+                            : 'rgba(0, 0, 0, 0.03)',
+                          border: '1px solid',
+                          borderColor: (theme) => {
+                            if (skillData) return theme.palette.mode === 'dark' ? `${skillData.color}44` : `${skillData.color}66`;
+                            return theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+                          },
                           backdropFilter: 'blur(4px)',
                           '& .MuiChip-icon': { 
                             color: skillData ? skillData.color : 'primary.main' 
                           },
                           '&:hover': {
-                            bgcolor: skillData ? `${skillData.color}33` : 'rgba(20, 184, 166, 0.1)',
+                            bgcolor: (theme) => {
+                              if (skillData) return theme.palette.mode === 'dark' ? `${skillData.color}33` : `${skillData.color}15`;
+                              return theme.palette.mode === 'dark' ? 'rgba(20, 184, 166, 0.1)' : 'rgba(0, 0, 0, 0.05)';
+                            },
                             borderColor: skillData ? skillData.color : 'primary.main',
-                            boxShadow: skillData ? `0 0 10px ${skillData.color}44` : '0 0 10px rgba(20, 184, 166, 0.2)',
+                            boxShadow: (theme) => {
+                              if (theme.palette.mode === 'light') return 'none';
+                              return skillData ? `0 0 10px ${skillData.color}44` : '0 0 10px rgba(20, 184, 166, 0.2)';
+                            },
                           },
                           transition: 'all 0.2s'
                         }} 
