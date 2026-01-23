@@ -108,7 +108,7 @@ export const data = {
     projectManagement: ["Méthode AGILE (SCRUM)", "Epic/Story", "Sprint", "Pair Programming", "Jira", "Confluence", "Git", "GitLab", "GitHub", "Pair Review"],
     backend: ["Java", "Spring Boot", "API REST", "Hibernate (ORM)", "Node.js", "Express"],
     frontend: ["Java", "Kotlin (Android)", "TypeScript (Angular, React)", "React", "Tailwind CSS"],
-    database: ["SQL (MySQL, SQL Server, PostgreSQL, SQLite)", "NoSQL (MongoDB, Redis)"],
+    database: ["MySQL", "SQL Server", "PostgreSQL", "SQLite", "MongoDB", "Redis"],
     mobile: ["Java", "Kotlin", "Koin", "DaggerHilt", "Clean Architecture", "Jetpack Compose", "Material3", "Coroutines", "KMP - KMM", "KTor", "GraphQL", "Retrofit", "Room"],
     ai: ["Python", "React", "Ollama", "RAG", "LangChain", "LangGraph"],
     tools: ["VS Code", "Trae", "Zed", "IntelliJ", "Android Studio"],

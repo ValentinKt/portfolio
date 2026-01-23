@@ -53,6 +53,16 @@ const skillIconMap = {
   "Ollama": { icon: <Cpu size={14} />, color: '#546e7a' },
   "RAG": { icon: <Database size={14} />, color: '#009688' },
   
+  // Databases
+  "SQL": { icon: <DbIcon size={14} />, color: '#4479A1' },
+  "MySQL": { icon: <DbIcon size={14} />, color: '#4479A1' },
+  "SQL Server": { icon: <DbIcon size={14} />, color: '#CC2927' },
+  "PostgreSQL": { icon: <DbIcon size={14} />, color: '#336791' },
+  "SQLite": { icon: <DbIcon size={14} />, color: '#003B57' },
+  "NoSQL": { icon: <Database size={14} />, color: '#4DB33D' },
+  "MongoDB": { icon: <Database size={14} />, color: '#4DB33D' },
+  "Redis": { icon: <Database size={14} />, color: '#D82C20' },
+  
   // Soft Skills
   "Empathique": { icon: <UserCheck size={14} />, color: '#e91e63' },
   "Curieux": { icon: <Lightbulb size={14} />, color: '#ffeb3b' },
