@@ -13,3 +13,6 @@
 [x] Ajouter le lien LinkedIn et mettre à jour les données (Gestion de projet & IA)
 [x] Ajouter des icônes supplémentaires dans les sections Compétences et Expériences
 [x] Mettre à jour l'UI pour afficher LinkedIn et accentuer l'IA/Gestion de projet
+[x] Corriger les erreurs de chargement d'icônes Icons8 (ERR_BLOCKED_BY_ORB)
+[x] Redémarrer le serveur dev pour résoudre les erreurs de cache (ERR_ABORTED)
+[x] Vérifier l'accessibilité et la cohérence visuelle de toutes les icônes
