@@ -2,14 +2,11 @@ import React from 'react';
 import { Box, Typography, Container, Grid, Paper, Chip, Stack } from '@mui/material';
 import { 
   Settings, Server, Layout, Smartphone, Cpu, Database, UserCheck, Languages,
-  Coffee, Code2, Layers, Zap, Hexagon, Box as BoxIcon, Workflow, Share2, 
-  Database as DbIcon, ShieldCheck, Braces, Terminal, BrainCircuit, Globe,
-  FileText, Repeat, Users, Github, GitBranch, Search, Lightbulb, FastForward
 } from 'lucide-react';
 import { data } from '../data';
 
 // Mapping des compétences vers des logos réels (Icons8)
-const skillIconMap = {
+const skillIconMap: Record<string, { icon: string; color: string }> = {
   // Gestion de Projet
   "Méthode AGILE": { icon: "https://img.icons8.com/color/48/project-management.png", color: '#00b8d9' },
   "Epic/Story": { icon: "https://img.icons8.com/color/48/task.png", color: '#6554c0' },
@@ -81,7 +78,7 @@ const skillIconMap = {
   "Flexibilité": { icon: "https://img.icons8.com/color/48/yoga.png", color: '#2196f3' }
 };
 
-const Skills = () => {
+const Skills: React.FC = () => {
   const skillCategories = [
     { title: "Gestion de Projet", items: data.skills.projectManagement, icon: <Settings size={20} /> },
     { title: "Mobile", items: data.skills.mobile, icon: <Smartphone size={20} /> },
@@ -102,7 +99,7 @@ const Skills = () => {
         </Typography>
         <Grid container spacing={4}>
           {skillCategories.map((category, index) => (
-            <Grid item xs={12} md={6} key={index}>
+            <Grid size={{ xs: 12, md: 6 }} key={index}>
               <Paper sx={{ p: 3, height: '100%' }} elevation={0} variant="outlined">
                 <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 2 }}>
                   <Box sx={{ color: 'primary.main', display: 'flex' }}>
@@ -114,21 +111,24 @@ const Skills = () => {
                 </Stack>
                 <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
                   {category.items.map((skill, i) => {
-                    const cleanSkill = skill.split(' (')[0].split(' - ')[0];
-                    const skillData = skillIconMap[cleanSkill] || skillIconMap[skill];
+                      const splitSkill = (skill || '').split(' (')[0] || '';
+                      const cleanSkill = splitSkill.split(' - ')[0] || '';
+                      const skillData = skillIconMap[cleanSkill] || skillIconMap[skill];
+                    
+                    const chipIcon = skillData ? (
+                      <Box 
+                        component="img" 
+                        src={skillData.icon} 
+                        alt={skill}
+                        sx={{ width: 20, height: 20, objectFit: 'contain' }}
+                      />
+                    ) : null;
                     
                     return (
                       <Chip 
                         key={i} 
                         label={skill} 
-                        icon={skillData ? (
-                          <Box 
-                            component="img" 
-                            src={skillData.icon} 
-                            alt={skill}
-                            sx={{ width: 20, height: 20, objectFit: 'contain' }}
-                          />
-                        ) : undefined}
+                        icon={chipIcon as React.ReactElement}
                         sx={{ 
                           bgcolor: 'white',
                           border: skillData ? `1px solid ${skillData.color}40` : '1px solid #e2e8f0',

@@ -3,7 +3,7 @@ import { Box, Typography, Container, Card, CardContent, Stack, Divider } from '@
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
 import { data } from '../data';
 
-const Education = () => {
+const Education: React.FC = () => {
   return (
     <Box id="education" sx={{ py: 8, bgcolor: 'white' }}>
       <Container maxWidth="lg">

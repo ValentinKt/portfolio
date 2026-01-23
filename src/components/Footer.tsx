@@ -3,7 +3,7 @@ import { Box, Container, Typography, IconButton, Stack, Link } from '@mui/materi
 import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
 import { data } from '../data';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <Box component="footer" sx={{ bgcolor: 'secondary.main', color: 'white', py: 6 }}>
       <Container maxWidth="lg">

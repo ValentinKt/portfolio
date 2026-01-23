@@ -9,7 +9,7 @@ import Skills from './components/Skills';
 import Education from './components/Education';
 import Footer from './components/Footer';
 
-function App() {
+const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />

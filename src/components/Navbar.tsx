@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Container, Box } from '@mui/material';
 import { Github, Mail, Phone } from 'lucide-react';
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   const navItems = [
     { label: 'Expériences', id: 'experience' },
     { label: 'Projets', id: 'projects' },
@@ -10,7 +10,7 @@ const Navbar = () => {
     { label: 'Formation', id: 'education' },
   ];
 
-  const scrollToSection = (id) => {
+  const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

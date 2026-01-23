@@ -1,8 +1,9 @@
+import React from 'react';
 import { Box, Typography, Container, Card, CardContent, Stack, Divider, Chip } from '@mui/material';
 import { Briefcase, Calendar, MapPin, CheckCircle2 } from 'lucide-react';
 import { data } from '../data';
 
-const Experience = () => {
+const Experience: React.FC = () => {
   return (
     <Box id="experience" sx={{ py: 8, bgcolor: 'background.default' }}>
       <Container maxWidth="lg">

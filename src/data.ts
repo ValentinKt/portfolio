@@ -1,4 +1,66 @@
-export const data = {
+export interface Language {
+  name: string;
+  level: string;
+}
+
+export interface Profile {
+  name: string;
+  title: string;
+  age: number;
+  email: string;
+  phone: string;
+  location: string;
+  summary: string;
+  github: string;
+  linkedin: string;
+  website: string;
+  languages: Language[];
+}
+
+export interface Experience {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  description: string[];
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  tags: string[];
+  github: string;
+  demo?: string;
+}
+
+export interface Education {
+  school: string;
+  degree: string;
+  period: string;
+  location: string;
+  details?: string[];
+}
+
+export interface Skills {
+  projectManagement: string[];
+  backend: string[];
+  frontend: string[];
+  database: string[];
+  mobile: string[];
+  ai: string[];
+  tools: string[];
+  softSkills: string[];
+}
+
+export interface PortfolioData {
+  profile: Profile;
+  experience: Experience[];
+  projects: Project[];
+  education: Education[];
+  skills: Skills;
+}
+
+export const data: PortfolioData = {
   profile: {
     name: "Valentin JEANNOT",
     title: "Ingénieur IT - Expert Web & Mobile",

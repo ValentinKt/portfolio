@@ -3,7 +3,7 @@ import { Box, Typography, Button, Container, Stack, Chip, Avatar } from '@mui/ma
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { data } from '../data';
 
-const Hero = () => {
+const Hero: React.FC = () => {
   const { profile } = data;
 
   return (

@@ -16,3 +16,8 @@
 [x] Corriger les erreurs de chargement d'icônes Icons8 (ERR_BLOCKED_BY_ORB)
 [x] Redémarrer le serveur dev pour résoudre les erreurs de cache (ERR_ABORTED)
 [x] Vérifier l'accessibilité et la cohérence visuelle de toutes les icônes
+[x] Refactoriser le projet en TypeScript (.ts, .tsx)
+[x] Définir les interfaces pour les données dans data.ts
+[x] Typer tous les composants React (React.FC)
+[x] Résoudre les erreurs de compilation TypeScript
+[x] Add homepage field to package.json for GitHub Pages

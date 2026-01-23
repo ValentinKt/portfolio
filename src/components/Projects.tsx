@@ -3,7 +3,7 @@ import { Box, Typography, Container, Grid, Card, CardContent, CardActions, Butto
 import { Github, ExternalLink } from 'lucide-react';
 import { data } from '../data';
 
-const Projects = () => {
+const Projects: React.FC = () => {
   return (
     <Box id="projects" sx={{ py: 8, bgcolor: 'white' }}>
       <Container maxWidth="lg">
@@ -15,7 +15,7 @@ const Projects = () => {
         </Typography>
         <Grid container spacing={4}>
           {data.projects.map((project, index) => (
-            <Grid item xs={12} sm={6} md={6} key={index}>
+            <Grid size={{ xs: 12, sm: 6, md: 6 }} key={index}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', '&:hover': { transform: 'translateY(-4px)', transition: 'transform 0.3s' } }}>
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography variant="h5" component="h3" gutterBottom sx={{ fontWeight: 'bold' }}>
