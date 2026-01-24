@@ -45,9 +45,28 @@ const Education: React.FC = () => {
               <CardContent sx={{ p: 4 }}>
                 <Stack direction={{ xs: 'column', sm: 'row' }} justifyContent="space-between" spacing={2}>
                   <Box>
-                    <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
-                      {renderTextWithLink(edu.degree)}
-                    </Typography>
+                    <Stack direction="row" spacing={1} alignItems="center">
+                      <Typography variant="h5" component="h3" sx={{ fontWeight: 'bold' }}>
+                        {edu.degree}
+                      </Typography>
+                      {edu.school === 'TELECOM NANCY' && (
+                        <Link
+                          href="https://telecomnancy.univ-lorraine.fr/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          sx={{ display: 'inline-flex', alignItems: 'center' }}
+                        >
+                          <Box
+                            component="img"
+                            src="https://img.icons8.com/fluency-systems-regular/48/99f2c8/external-link.png"
+                            width={20}
+                            height={20}
+                            alt="external-link"
+                            sx={{ verticalAlign: 'middle' }}
+                          />
+                        </Link>
+                      )}
+                    </Stack>
                     <Typography variant="h6" color="primary">
                       {edu.school}
                     </Typography>

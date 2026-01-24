@@ -155,7 +155,7 @@ export const data: PortfolioData = {
     },
     {
       school: "TELECOM NANCY",
-      degree: "Ingénieur Informatique (Spécialisation : Système d'Information d'Entreprise)",
+      degree: "INGÉNIEUR INFORMATIQUE",
       period: "2012 - 2016",
       location: "Villers-lès-Nancy, France",
       details: [
