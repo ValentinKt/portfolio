@@ -23,3 +23,4 @@
 [x] Mettre à jour les détails des sections Formation demandées
 [x] Ajouter un thème sombre aligné sur le style fourni
 [x] Add homepage field to package.json for GitHub Pages
+[x] Mettre à jour le README avec les liens personnels
