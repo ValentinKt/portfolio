@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Container, Stack, Chip, Avatar } from '@mui/material';
 import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 import { data } from '../data';
+import profilePhoto from '../assets/Valentin_JEANNOT.jpeg';
 
 const Hero: React.FC = () => {
   const { profile } = data;
@@ -94,21 +95,17 @@ const Hero: React.FC = () => {
           </Box>
           <Box sx={{ flex: '0 0 auto', display: 'flex', justifyContent: 'center' }}>
             <Avatar
+              src={profilePhoto}
+              alt={`${profile.name} portrait`}
+              imgProps={{ loading: 'lazy' }}
               sx={{
                 width: { xs: 200, md: 300 },
                 height: { xs: 200, md: 300 },
-                bgcolor: (theme) => theme.palette.mode === 'dark' ? 'rgba(20, 184, 166, 0.1)' : 'rgba(20, 184, 166, 0.05)',
-                color: 'primary.main',
-                fontSize: '4rem',
-                fontWeight: 'bold',
                 border: '2px solid',
                 borderColor: 'primary.main',
                 boxShadow: (theme) => theme.palette.mode === 'dark' ? '0 0 30px rgba(20, 184, 166, 0.4)' : '0 10px 25px -5px rgba(20, 184, 166, 0.2)',
-                backdropFilter: 'blur(5px)',
               }}
-            >
-              VJ
-            </Avatar>
+            />
           </Box>
         </Stack>
       </Container>

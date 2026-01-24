@@ -25,3 +25,4 @@
 [x] Add homepage field to package.json for GitHub Pages
 [x] Mettre à jour le README avec les liens personnels
 [x] Mettre à jour la formation TELECOM NANCY avec lien externe
+[x] Remplacer l’avatar par la photo dans la section Hero
