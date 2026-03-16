@@ -115,6 +115,18 @@ export const data: PortfolioData = {
   ],
   projects: [
     {
+      title: "Vite Template React TS MUI",
+      description: "Modern Vite template for React, TypeScript, and MUI projects with pre-configured tools for rapid development.",
+      tags: ["React", "TypeScript", "MUI", "Vite"],
+      github: "https://github.com/ValentinKt/Vite-Template-React-TS-MUI"
+    },
+    {
+      title: "Python Template",
+      description: "A professional template for Python projects, featuring best practices, testing, and documentation setup.",
+      tags: ["Python", "Template"],
+      github: "https://github.com/ValentinKt/python-template"
+    },
+    {
       title: "DataAnalyzer",
       description: "Python library designed for statistical data analysis and automated test selection.",
       tags: ["Python"],
